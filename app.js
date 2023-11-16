@@ -30,18 +30,13 @@ app.use('/auth', authRoutes);
 app.use('/posts', postRoutes);
 app.use('/comments', commentRoutes);
 
-module.exports = app;
 
 
-try {
-  const decoded = jwt.verify(token, secretKey);
-  console.log('Decoded Token:', decoded);
-} catch (error) {
-  console.error('Token Verification Failed:', error.message);
-}
+
 
 const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+module.exports = app;
